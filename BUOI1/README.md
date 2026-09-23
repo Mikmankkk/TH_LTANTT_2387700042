@@ -122,6 +122,7 @@ BUOI1/
    Thông tin vi phạm được ghi vào file nhật ký `gitsecure.log`.
 
 ---
+<img width="1001" height="37" alt="1790175129324_1427781820091528413_1427781820091528413_ea266a95c549601dfc9f1ed5ddfa872d" src="https://github.com/user-attachments/assets/18aa924b-bf12-443f-a7c3-b90ad7e4a47c" />
 
 # ================================================================
 # BÀI THỰC HÀNH 3 (LAB 3): 1.6 THỰC HÀNH GHI NHẬT KÝ ƯU TIÊN BẢO MẬT
