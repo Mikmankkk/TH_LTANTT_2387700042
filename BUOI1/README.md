@@ -194,6 +194,8 @@ def validate():
   - **Kiểm tra `secure.log.sig`**: Đã tạo chữ ký mã băm SHA-256 đối soát.
 
 ---
+<img width="1533" height="347" alt="1790175150371_1427781820091528413_1427781820091528413_4217a65ffd59bd0bc4bda288d27d78c0" src="https://github.com/user-attachments/assets/e10e696f-d550-466b-bb6e-14b5954840cd" />
+<img width="567" height="201" alt="1790175154004_1427781820091528413_1427781820091528413_b696f38ead994ce6a69232fb3f46d075" src="https://github.com/user-attachments/assets/c65ee048-63f2-4ef0-a482-a4aa2ddc36b1" />
 
 ## 🚀 HƯỚNG DẪN CHẠY TỪNG BÀI LAB
 
