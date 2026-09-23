@@ -4,9 +4,9 @@
 - **Học viên thực hiện**: Võ Hoàng Minh Mẫn
 - **MSSV**: 2387700042
 - **Các bài thực hành trong BUOI1**:
-  - **Lab 1**: Xác thực & làm sạch dữ liệu đầu vào (Input Validation & Sanitization - Trang 11 đến 19)
-  - **Lab 2**: An toàn mã nguồn với Git Hooks (Mục 1.4 Thực hành: Git Security Hook - Trang 20 đến 25)
-  - **Lab 3**: Hệ thống ghi nhật ký ưu tiên bảo mật (Mục 1.6 Thực hành: Secure Logger - Trang 26 đến 31)
+  - **Lab 1**: Xác thực & làm sạch dữ liệu đầu vào 
+  - **Lab 2**: An toàn mã nguồn với Git Hooks 
+  - **Lab 3**: Hệ thống ghi nhật ký ưu tiên bảo mật 
 
 ---
 
@@ -80,6 +80,9 @@ BUOI1/
   - `HTML Input`: `<script>alert(1)</script>` $\rightarrow$ **Đã mã hóa: `&lt;script&gt;alert(1)&lt;/script&gt;`**
 
 ---
+<img width="963" height="727" alt="1790175098468_1427781820091528413_1427781820091528413_98147789ce15e218bed7cc9d443d6172" src="https://github.com/user-attachments/assets/76bd5f2a-8649-4cd6-8255-6c0c29c31799" />
+<img width="1468" height="287" alt="1790175111933_1427781820091528413_1427781820091528413_ebce7e8c6ea95dadd2681af0a5ae8462" src="https://github.com/user-attachments/assets/96ccaa39-3004-43de-8ef1-d732a9442562" />
+<img width="1032" height="761" alt="1790175106948_1427781820091528413_1427781820091528413_1074b1c1e87c7782e75e9a72ecbf8e03" src="https://github.com/user-attachments/assets/08dfb54e-7498-407e-8ece-6a05c8cf0d11" />
 
 # ================================================================
 # BÀI THỰC HÀNH 2 (LAB 2): 1.4 THỰC HÀNH GIT SECURITY HOOK
