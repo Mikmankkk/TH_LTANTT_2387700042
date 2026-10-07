@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Security & Secrets (Lab 3 requirement)
+gitsecure.log
+certs/
+*.pem
+.env
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
