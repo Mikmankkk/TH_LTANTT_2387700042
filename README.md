@@ -25,3 +25,18 @@
   - Tra cứu và cảnh báo mã lỗ hổng bảo mật phổ biến (CVE Checker).
   - Lọc mục tiêu theo Whitelist / Blacklist và gửi báo cáo qua Email (SMTP SSL).
 - 👉 *Xem chi tiết tại:* [BUOI3/README.md](BUOI3/README.md)
+
+#### 3. [BUỔI 4: BẢO MẬT WEB APP VÀ API](BUOI4/README.md)
+- **Phần 1: Web Vulnerability Scanner (`web-vuln-scanner`)**: Phát triển công cụ rà quét lỗ hổng ứng dụng Web toàn diện theo chuẩn OWASP Top 10 (CLI & Web UI Flask):
+  - Nhận diện lỗ hổng Cross-Site Scripting (Reflected XSS) thông qua thư viện payload chuẩn hóa.
+  - Kiểm thử và phát hiện các biến thể SQL Injection qua Query Parameters.
+  - Phân tích và phát hiện biểu mẫu thiếu sót cơ chế Anti-CSRF Token.
+  - Kiểm tra và ngăn ngừa nguy cơ Server-Side Request Forgery (SSRF) truy cập tài nguyên mạng nội bộ & Cloud Metadata.
+  - Báo cáo phân loại rủi ro (Critical, High, Medium, Low) và giao diện trực quan thân thiện.
+- **Phần 2: JWT & OAuth Security Tools (`jwt-security-tools`)**: Bộ giải pháp an toàn xác thực token & API Gateway:
+  - Kiểm tra toàn diện tính hợp lệ, chữ ký số và thời hạn hiệu lực của JSON Web Token (`JWTValidator`).
+  - Thử nghiệm tấn công vét cạn bẻ khóa bí mật JWT bằng kỹ thuật từ điển đa luồng (`JWTCracker`).
+  - Triển khai máy khách tuân thủ chuẩn luồng ủy quyền OAuth 2.0 Authorization Code Flow (`OAuthClient`).
+  - Quản lý vòng đời token, tự động cấp phát Access Token ngắn hạn và xoay vòng Refresh Token (`TokenManager`).
+  - Xây dựng cổng bảo vệ API Gateway tích hợp xác thực Bearer token cho endpoint nhạy cảm (`APIGateway`).
+- 👉 *Xem chi tiết tại:* [BUOI4/README.md](BUOI4/README.md)
