@@ -2,11 +2,16 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+build/
+dist/
 
-# Security & Secrets (Lab 3 requirement)
+# Security & Secrets (Lab requirements)
 gitsecure.log
 certs/
 *.pem
+*.enc
+*.dec
 .env
 
 # Virtual Environment

@@ -15,7 +15,21 @@
 - **Lab 3**: Hệ thống ghi nhật ký ưu tiên bảo mật (Secure Logger - PII Masking, Hash SHA-256, Log Rotation GZip).
 - 👉 *Xem chi tiết tại:* [BUOI1/README.md](BUOI1/README.md)
 
-#### 2. [BUỔI 3: BẢO MẬT MẠNG MÁY TÍNH & TRINH SÁT HỆ THỐNG](BUOI3/README.md)
+#### 2. [BUỔI 2: MÃ HÓA, TRIỂN KHAI PKI](BUOI2/README.md)
+- **Phần 1: CryptoToolkit**: Xây dựng thư viện mật mã hiện đại hỗ trợ CLI, GUI Tkinter và REST API Flask:
+  - Mã hóa & giải mã tệp tin bằng thuật toán AES-256-GCM kết hợp hàm sinh khóa PBKDF2HMAC-SHA256 (100.000 iterations).
+  - Băm mật khẩu an toàn theo tiêu chuẩn hiện đại bằng giải thuật Argon2id (Memory-hard).
+  - Khởi tạo cặp khóa RSA-2048, thực hiện ký số và xác thực chữ ký số PKCS#1 v1.5 SHA-256.
+  - Bộ kiểm thử tự động pytest đạt 100% test cases (6/6 PASS).
+- **Phần 2: Certificate Authority (Mini CA)**: Xây dựng hệ thống quản lý vòng đời chứng chỉ số X.509:
+  - Thiết lập phân cấp Root CA (tự ký, hiệu lực 10 năm) và Intermediate CA (hiệu lực 5 năm).
+  - Cấp phát chứng chỉ số người dùng cuối (End-entity Certificate) có giới hạn quyền CA.
+  - Xác thực chuỗi chứng chỉ phân cấp (Certificate Chain Verification).
+  - Thu hồi chứng chỉ (Revocation) qua Danh sách chứng chỉ thu hồi CRL (`ca_crl.pem`) và kiểm tra trạng thái OCSP.
+  - Cung cấp giao diện tương tác trực quan CLI (`demo.py`) và GUI Tkinter (`demo_ui.py`).
+- 👉 *Xem chi tiết tại:* [BUOI2/README.md](BUOI2/README.md)
+
+#### 3. [BUỔI 3: BẢO MẬT MẠNG MÁY TÍNH & TRINH SÁT HỆ THỐNG](BUOI3/README.md)
 - **Phần 1: SecureChat**: Lập trình Socket bảo mật đa luồng với xác thực chứng chỉ hai chiều (Mutual TLS / mTLS) bằng OpenSSL và mã hóa đầu-cuối E2EE bằng thuật toán AES-256-CBC với PKCS#7 padding.
 - **Phần 2: NetRecon**: Phát triển bộ công cụ khám phá và trinh sát mạng đa giao diện (CLI & Web Flask/HTMX):
   - Quét cổng bất đồng bộ AsyncIO có kiểm soát tốc độ (Rate limiting).
@@ -26,7 +40,7 @@
   - Lọc mục tiêu theo Whitelist / Blacklist và gửi báo cáo qua Email (SMTP SSL).
 - 👉 *Xem chi tiết tại:* [BUOI3/README.md](BUOI3/README.md)
 
-#### 3. [BUỔI 4: BẢO MẬT WEB APP VÀ API](BUOI4/README.md)
+#### 4. [BUỔI 4: BẢO MẬT WEB APP VÀ API](BUOI4/README.md)
 - **Phần 1: Web Vulnerability Scanner (`web-vuln-scanner`)**: Phát triển công cụ rà quét lỗ hổng ứng dụng Web toàn diện theo chuẩn OWASP Top 10 (CLI & Web UI Flask):
   - Nhận diện lỗ hổng Cross-Site Scripting (Reflected XSS) thông qua thư viện payload chuẩn hóa.
   - Kiểm thử và phát hiện các biến thể SQL Injection qua Query Parameters.
