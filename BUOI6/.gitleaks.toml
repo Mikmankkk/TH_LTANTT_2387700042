@@ -1,0 +1,6 @@
+title = "BUOI6 source secret scan"
+[extend]
+useDefault = true
+[[allowlists]]
+description = "Generated assets and installed dependencies are not project source"
+paths = ['''(^|/)(node_modules|build|public|\.docusaurus|evidence|\.capture-temp)/''']

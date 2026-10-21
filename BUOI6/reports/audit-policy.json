@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-21T06:33:52.377Z",
+  "accepted": [
+    {
+      "id": "GHSA-vfj7-8cjw-p6xm",
+      "package": "braces",
+      "version": "3.0.3",
+      "expires": "2026-11-21",
+      "reason": "No upstream patched version on 2026-10-21. Build-only glob processing of repository-controlled paths. GitHub Pages serves static files and does not execute braces. No untrusted patterns accepted by the deployed site. Reassess before expiry; never run builds of untrusted source with secrets."
+    }
+  ],
+  "rejected": []
+}

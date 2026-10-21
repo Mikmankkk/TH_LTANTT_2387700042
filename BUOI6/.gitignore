@@ -1,0 +1,10 @@
+node_modules/
+build/
+.docusaurus/
+public/
+.capture-temp/
+playwright-report/
+test-results/
+.env
+*.pem
+*.key

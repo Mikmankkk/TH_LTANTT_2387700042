@@ -1,0 +1,67 @@
+name: BUOI6 DevSecOps
+on:
+  push:
+    branches: [main]
+    paths: ['BUOI6/**', '.github/workflows/buoi6.yml', '.gitlab-ci.yml']
+  pull_request:
+    paths: ['BUOI6/**', '.github/workflows/buoi6.yml', '.gitlab-ci.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: buoi6-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    working-directory: BUOI6
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: BUOI6/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run security
+      - run: node scripts/audit.mjs
+      - name: SAST
+        run: docker run --rm -v "$PWD:/src" semgrep/semgrep:1.182.0 semgrep scan --config p/javascript --error --metrics=off /src/src /src/scripts
+      - name: Secret scanning
+        run: docker run --rm -v "$PWD:/src" zricethezav/gitleaks:v8.30.1 dir /src --config /src/.gitleaks.toml --redact --exit-code 1
+  build:
+    needs: security
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: BUOI6/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: node scripts/checksums.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: BUOI6/build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: buoi6-build-checksums
+          path: BUOI6/reports/build-sha256.json
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

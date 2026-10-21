@@ -1,0 +1,61 @@
+stages: [test, security, build, deploy]
+default:
+  image: node:24-bookworm-slim
+  before_script:
+    - cd BUOI6
+    - npm ci --no-audit --no-fund
+  cache:
+    key:
+      files: [BUOI6/package-lock.json]
+    paths: [BUOI6/.npm/]
+variables:
+  npm_config_cache: '$CI_PROJECT_DIR/BUOI6/.npm'
+test-job:
+  stage: test
+  script: [npm test]
+security-check:
+  stage: security
+  script: [npm run security]
+dependency-audit:
+  stage: security
+  script:
+    - node scripts/audit.mjs
+semgrep:
+  stage: security
+  image:
+    name: semgrep/semgrep:1.182.0
+    entrypoint: ['']
+  before_script: []
+  cache: []
+  script:
+    - semgrep scan --config p/javascript --error --metrics=off BUOI6/src BUOI6/scripts
+secret-scan:
+  stage: security
+  image:
+    name: zricethezav/gitleaks:v8.30.1
+    entrypoint: ['']
+  before_script: []
+  cache: []
+  script:
+    - gitleaks dir BUOI6 --config BUOI6/.gitleaks.toml --redact --exit-code 1
+build-job:
+  stage: build
+  script:
+    - npm run build
+    - node scripts/checksums.mjs
+  artifacts:
+    paths: [BUOI6/build/, BUOI6/reports/build-sha256.json]
+    expire_in: 7 days
+pages:
+  stage: deploy
+  before_script: []
+  cache: []
+  dependencies: [build-job]
+  script:
+    - mv BUOI6/build public
+  pages:
+    publish: public
+  artifacts:
+    paths: [public/]
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

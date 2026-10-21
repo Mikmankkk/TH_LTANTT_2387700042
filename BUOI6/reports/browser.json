@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-21T06:32:58.793Z",
+  "checks": [
+    "home HTTP 200",
+    "heading visible",
+    "report navigation",
+    "mobile no horizontal overflow",
+    "no JavaScript page errors"
+  ],
+  "errors": []
+}

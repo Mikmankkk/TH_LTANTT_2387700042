@@ -1,0 +1,2 @@
+include:
+  - local: '/BUOI6/.gitlab-ci.yml'

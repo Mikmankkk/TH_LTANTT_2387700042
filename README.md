@@ -60,3 +60,9 @@
 - **DAST-TOOL**: Giám sát tiến trình, bộ nhớ, thống kê mạng, audit event, demo sandbox và Flask API.
 - **Kết quả chạy thật**: 41 kiểm thử đạt, 7 kiểm tra HTTP đạt; README có ảnh chụp CMD trên máy Mikmankkk và báo cáo đối chiếu.
 - 👉 *Xem chi tiết tại:* [BUOI5/README.md](BUOI5/README.md)
+
+
+#### 6. [BUỔI 6: BẢO MẬT VỚI DEVSECOPS](BUOI6/README.md)
+- GitLab CI/CD cơ bản, Docusaurus, security gates, artifact và Pages deployment.
+- Báo cáo có ảnh CMD thật, ảnh website, kết quả kiểm thử và xử lý dependency.
+- Sinh viên: **Võ Hoàng Minh Mẫn — MSSV 2387700042**.
