@@ -1,0 +1,7 @@
+[
+  {"id": "dangerous-call", "severity": "high"},
+  {"id": "shell-true", "severity": "high"},
+  {"id": "hardcoded-secret", "severity": "high"},
+  {"id": "unsafe-import", "severity": "medium"},
+  {"id": "code-quality", "severity": "low"}
+]

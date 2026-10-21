@@ -1,0 +1,24 @@
+{
+  "file": "examples/safe.py",
+  "issues": [],
+  "metrics": {
+    "functions": [
+      {
+        "name": "parse_data",
+        "line": 5,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      },
+      {
+        "name": "credential",
+        "line": 9,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      }
+    ],
+    "dependencies": 2
+  }
+}
+SARIF saved: ../reports/safe.sarif; findings: 0

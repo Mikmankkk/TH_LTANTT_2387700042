@@ -1,0 +1,108 @@
+{
+  "pid": 19632,
+  "cpu_usage": 0.0,
+  "memory_usage": 24059904,
+  "open_files": [
+    "C:\\Windows\\System32\\en-US\\KernelBase.dll.mui"
+  ],
+  "memory": {
+    "current_bytes": 9544,
+    "peak_bytes": 309014,
+    "growth_bytes": 9544,
+    "uncollectable_objects": 0,
+    "note": "Growth is an observation, not proof of a memory leak."
+  },
+  "overflow_test": true,
+  "network": {
+    "Local Area Connection* 9": {
+      "bytes_sent": 0,
+      "bytes_recv": 0,
+      "packets_sent": 0,
+      "packets_recv": 0,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "Local Area Connection* 10": {
+      "bytes_sent": 0,
+      "bytes_recv": 0,
+      "packets_sent": 0,
+      "packets_recv": 0,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "VMware Network Adapter VMnet1": {
+      "bytes_sent": 480,
+      "bytes_recv": 4,
+      "packets_sent": 480,
+      "packets_recv": 4,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "VMware Network Adapter VMnet8": {
+      "bytes_sent": 678,
+      "bytes_recv": 4,
+      "packets_sent": 678,
+      "packets_recv": 4,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "Wi-Fi": {
+      "bytes_sent": 39489708,
+      "bytes_recv": 510346097,
+      "packets_sent": 154885,
+      "packets_recv": 726842,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "Ethernet": {
+      "bytes_sent": 0,
+      "bytes_recv": 0,
+      "packets_sent": 0,
+      "packets_recv": 0,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "Loopback Pseudo-Interface 1": {
+      "bytes_sent": 0,
+      "bytes_recv": 0,
+      "packets_sent": 0,
+      "packets_recv": 0,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    },
+    "vEthernet (Default Switch)": {
+      "bytes_sent": 35510,
+      "bytes_recv": 0,
+      "packets_sent": 321,
+      "packets_recv": 0,
+      "errin": 0,
+      "errout": 0,
+      "dropin": 0,
+      "dropout": 0
+    }
+  },
+  "suspicious_calls": [
+    {
+      "event": "subprocess.Popen",
+      "message": "Observed runtime event; context review required."
+    }
+  ],
+  "sandbox": {
+    "stdout": "Hello Sandbox\n",
+    "stderr": ""
+  }
+}

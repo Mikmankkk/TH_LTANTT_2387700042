@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "BUOI5-SAST",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "dangerous-call"
+            },
+            {
+              "id": "hardcoded-secret"
+            },
+            {
+              "id": "unsafe-import"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "dangerous-call",
+          "level": "error",
+          "message": {
+            "text": "Potentially unsafe call: eval"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../sast-tool/examples/vulnerable_01.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "hardcoded-secret",
+          "level": "error",
+          "message": {
+            "text": "Hardcoded credential; use an environment variable."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../sast-tool/examples/vulnerable_01.py"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-import",
+          "level": "warning",
+          "message": {
+            "text": "Review pickle: never deserialize untrusted input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../sast-tool/examples/vulnerable_01.py"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

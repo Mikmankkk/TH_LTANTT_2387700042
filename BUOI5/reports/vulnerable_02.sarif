@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "BUOI5-SAST",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "dangerous-call"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "dangerous-call",
+          "level": "error",
+          "message": {
+            "text": "Potentially unsafe call: eval"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../sast-tool/examples/vulnerable_02.py"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "dangerous-call",
+          "level": "error",
+          "message": {
+            "text": "Potentially unsafe call: exec"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../sast-tool/examples/vulnerable_02.py"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 5
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

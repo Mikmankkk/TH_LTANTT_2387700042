@@ -54,3 +54,9 @@
   - Quản lý vòng đời token, tự động cấp phát Access Token ngắn hạn và xoay vòng Refresh Token (`TokenManager`).
   - Xây dựng cổng bảo vệ API Gateway tích hợp xác thực Bearer token cho endpoint nhạy cảm (`APIGateway`).
 - 👉 *Xem chi tiết tại:* [BUOI4/README.md](BUOI4/README.md)
+
+#### 5. [BUỔI 5: PHÂN TÍCH VÀ KIỂM THỬ BẢO MẬT](BUOI5/README.md)
+- **SAST-TOOL**: Phân tích AST, pattern, luật cấu hình, chỉ số chất lượng mã và báo cáo SARIF 2.1.0.
+- **DAST-TOOL**: Giám sát tiến trình, bộ nhớ, thống kê mạng, audit event, demo sandbox và Flask API.
+- **Kết quả chạy thật**: 41 kiểm thử đạt, 7 kiểm tra HTTP đạt; README có ảnh chụp CMD trên máy Mikmankkk và báo cáo đối chiếu.
+- 👉 *Xem chi tiết tại:* [BUOI5/README.md](BUOI5/README.md)

@@ -1,0 +1,49 @@
+{
+  "file": "examples/vulnerable_01.py",
+  "issues": [
+    {
+      "type": "dangerous-call",
+      "rule_id": "dangerous-call",
+      "message": "Potentially unsafe call: eval",
+      "lineno": 7,
+      "col_offset": 11,
+      "severity": "high"
+    },
+    {
+      "type": "hardcoded-secret",
+      "rule_id": "hardcoded-secret",
+      "message": "Hardcoded credential; use an environment variable.",
+      "lineno": 2,
+      "col_offset": 0,
+      "severity": "high"
+    },
+    {
+      "type": "unsafe-import",
+      "rule_id": "unsafe-import",
+      "message": "Review pickle: never deserialize untrusted input.",
+      "lineno": 3,
+      "col_offset": 0,
+      "severity": "medium"
+    }
+  ],
+  "metrics": {
+    "functions": [
+      {
+        "name": "unsafe_func",
+        "line": 6,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      },
+      {
+        "name": "safe_func",
+        "line": 10,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      }
+    ],
+    "dependencies": 1
+  }
+}
+SARIF saved: ../reports/vulnerable_01.sarif; findings: 3

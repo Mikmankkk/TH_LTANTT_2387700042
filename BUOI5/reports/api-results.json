@@ -1,0 +1,161 @@
+[
+  {
+    "endpoint": "/api/monitor",
+    "request": null,
+    "status": 200,
+    "body": {
+      "cpu_usage": 0.0,
+      "memory_usage": 43585536,
+      "open_files": [
+        "C:\\Windows\\System32\\en-US\\KernelBase.dll.mui",
+        "C:\\Users\\Mikmankkk\\Downloads\\BUOI5\\repository\\BUOI5\\reports\\api-server.log"
+      ]
+    }
+  },
+  {
+    "endpoint": "/api/memory",
+    "request": null,
+    "status": 200,
+    "body": {
+      "memory_leaks": {
+        "current_bytes": 399359,
+        "growth_bytes": 399359,
+        "note": "Growth is an observation, not proof of a memory leak.",
+        "peak_bytes": 10418425,
+        "uncollectable_objects": 0
+      },
+      "overflow_test": true
+    }
+  },
+  {
+    "endpoint": "/api/network",
+    "request": null,
+    "status": 200,
+    "body": {
+      "network_stats": {
+        "Ethernet": {
+          "bytes_recv": 0,
+          "bytes_sent": 0,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 0,
+          "packets_sent": 0
+        },
+        "Local Area Connection* 10": {
+          "bytes_recv": 0,
+          "bytes_sent": 0,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 0,
+          "packets_sent": 0
+        },
+        "Local Area Connection* 9": {
+          "bytes_recv": 0,
+          "bytes_sent": 0,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 0,
+          "packets_sent": 0
+        },
+        "Loopback Pseudo-Interface 1": {
+          "bytes_recv": 0,
+          "bytes_sent": 0,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 0,
+          "packets_sent": 0
+        },
+        "VMware Network Adapter VMnet1": {
+          "bytes_recv": 4,
+          "bytes_sent": 480,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 4,
+          "packets_sent": 480
+        },
+        "VMware Network Adapter VMnet8": {
+          "bytes_recv": 4,
+          "bytes_sent": 679,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 4,
+          "packets_sent": 679
+        },
+        "Wi-Fi": {
+          "bytes_recv": 513443124,
+          "bytes_sent": 39833657,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 730044,
+          "packets_sent": 156736
+        },
+        "vEthernet (Default Switch)": {
+          "bytes_recv": 0,
+          "bytes_sent": 35510,
+          "dropin": 0,
+          "dropout": 0,
+          "errin": 0,
+          "errout": 0,
+          "packets_recv": 0,
+          "packets_sent": 321
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "/api/sandbox",
+    "request": {
+      "command": "echo Hello Sandbox API"
+    },
+    "status": 200,
+    "body": {
+      "stderr": "",
+      "stdout": "Hello Sandbox API\n"
+    }
+  },
+  {
+    "endpoint": "/api/security",
+    "request": null,
+    "status": 200,
+    "body": {
+      "suspicious_calls": [
+        {
+          "event": "subprocess.Popen",
+          "message": "Observed runtime event; context review required."
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "/api/sandbox",
+    "request": {
+      "command": "echo x & whoami"
+    },
+    "status": 400,
+    "body": {
+      "error": "Shell metacharacters are not allowed"
+    }
+  },
+  {
+    "endpoint": "/api/sandbox",
+    "request": {},
+    "status": 400,
+    "body": {
+      "error": "Expected JSON object with string command"
+    }
+  }
+]

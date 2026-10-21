@@ -1,0 +1,48 @@
+{
+  "file": "examples/vulnerable_02.py",
+  "issues": [
+    {
+      "type": "dangerous-call",
+      "rule_id": "dangerous-call",
+      "message": "Potentially unsafe call: eval",
+      "lineno": 3,
+      "col_offset": 11,
+      "severity": "high"
+    },
+    {
+      "type": "dangerous-call",
+      "rule_id": "dangerous-call",
+      "message": "Potentially unsafe call: exec",
+      "lineno": 12,
+      "col_offset": 4,
+      "severity": "high"
+    }
+  ],
+  "metrics": {
+    "functions": [
+      {
+        "name": "dangerous_eval",
+        "line": 2,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      },
+      {
+        "name": "read_file",
+        "line": 6,
+        "length": 3,
+        "complexity": 1,
+        "nesting": 1
+      },
+      {
+        "name": "execute_code",
+        "line": 11,
+        "length": 2,
+        "complexity": 1,
+        "nesting": 0
+      }
+    ],
+    "dependencies": 0
+  }
+}
+SARIF saved: ../reports/vulnerable_02.sarif; findings: 2
