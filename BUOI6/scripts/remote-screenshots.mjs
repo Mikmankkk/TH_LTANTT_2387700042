@@ -1,0 +1,16 @@
+import {chromium} from '@playwright/test';
+import {readFileSync} from 'node:fs';
+const {run}=JSON.parse(readFileSync('reports/github-run.json','utf8'));
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1100}});
+await page.goto(run.url,{waitUntil:'domcontentloaded'});
+await page.waitForLoadState('networkidle');
+console.log('GitHub page:',await page.title());
+console.log((await page.locator('body').innerText()).slice(-1800));
+await page.screenshot({path:'evidence/08-github-actions.png',fullPage:true});
+const response=await page.goto('https://mikmankkk.github.io/TH_LTANTT_2387700042/',{waitUntil:'networkidle'});
+if(response.status()!==200)throw new Error(`Published site HTTP ${response.status()}`);
+await page.getByRole('heading',{name:'Chạy nhanh. Kiểm soát bảo mật.'}).waitFor();
+await page.screenshot({path:'evidence/09-published-website.png',fullPage:true});
+console.log('Captured real GitHub Actions page and published Docusaurus website.');
+await browser.close();

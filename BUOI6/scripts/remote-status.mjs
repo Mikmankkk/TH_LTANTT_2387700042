@@ -1,0 +1,15 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+const base='https://api.github.com/repos/Mikmankkk/TH_LTANTT_2387700042';
+const get=async path=>{const response=await fetch(base+path);if(!response.ok)throw new Error(`GitHub API HTTP ${response.status}`);return response.json();};
+const {workflow_runs:runs}=await get('/actions/workflows/buoi6.yml/runs?per_page=1');
+const run=runs[0];
+const {jobs}=await get(`/actions/runs/${run.id}/jobs`);
+console.log('GitHub BUOI6 pipeline:',run.html_url);
+console.log('Commit:',run.head_sha);
+console.log('Run:',run.status,run.conclusion||'');
+for(const job of jobs)console.log(`  ${job.name}: ${job.status} ${job.conclusion||''}`);
+const response=await fetch('https://mikmankkk.github.io/TH_LTANTT_2387700042/');
+console.log('Public Docusaurus website HTTP:',response.status);
+mkdirSync('reports',{recursive:true});
+writeFileSync('reports/github-run.json',JSON.stringify({time:new Date().toISOString(),run:{id:run.id,url:run.html_url,sha:run.head_sha,status:run.status,conclusion:run.conclusion},jobs:jobs.map(({name,status,conclusion,html_url})=>({name,status,conclusion,url:html_url})),website:{url:response.url,httpStatus:response.status}},null,2));
+if(run.conclusion!=='success'||response.status!==200)process.exitCode=1;

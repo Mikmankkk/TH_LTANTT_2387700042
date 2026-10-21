@@ -10,6 +10,8 @@ Môn: Lập trình an toàn thông tin. Đề bài: `lab-06.docx`.
 - [Trang Docusaurus trên GitHub Pages](https://mikmankkk.github.io/TH_LTANTT_2387700042/)
 - [Lịch sử pipeline thực tế](https://github.com/Mikmankkk/TH_LTANTT_2387700042/actions/workflows/buoi6.yml)
 
+**Đã xác minh triển khai:** [run #39556402812](https://github.com/Mikmankkk/TH_LTANTT_2387700042/actions/runs/39556402812) của commit `999bace` hoàn tất **success**, cả ba job **security / build / deploy** đều thành công. URL website trả **HTTP 200**. [Bản ghi API](reports/github-run.json). Run này kiểm tra commit triển khai; các cập nhật minh chứng sau đó chỉ bổ sung báo cáo và script đọc trạng thái.
+
 ## 1. Đối chiếu yêu cầu đề
 
 | Nội dung lab-06.docx | Tệp triển khai / kết quả |
@@ -83,6 +85,14 @@ Runner dùng môi trường riêng của từng job. Quyền GitHub mặc địn
 ![Nội dung báo cáo](evidence/06-website-report.png)
 
 ![Trang chủ mobile](evidence/07-website-mobile.png)
+
+### 4.6. Pipeline GitHub và website đã xuất bản
+
+![GitHub Actions: pipeline thực tế](evidence/08-github-actions.png)
+
+![Docusaurus đã xuất bản trên GitHub Pages](evidence/09-published-website.png)
+
+Chạy `node scripts/remote-status.mjs` để đọc trạng thái pipeline và HTTP website, không cần lưu token. Script `node scripts/remote-screenshots.mjs` chụp hai trang công khai bằng Chrome.
 
 ## 5. Chạy lại bài trên Windows CMD
 
